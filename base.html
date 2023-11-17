@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Website</title>
+    <style>
+        /* Global styles */
+        body {
+            font-family: jost, sans-serif;
+            margin: 5dp;
+            padding: 0;
+        }
+
+        /* Header styles */
+        header {
+            background-color: lightblue;
+            color: black;
+            text-align: center;
+            padding: 18px;
+            height: 60px; /* Set the header height */
+        }
+
+        /* Navbar styles */
+        nav {
+            background-color: lightgrey;
+            text-align: right;
+            height: 60px; /* Set the navbar height to match the header */
+        }
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        li {
+            display: inline-block;
+            margin-right: 10px;
+        }
+
+        li:last-child {
+            margin-right: 0;
+        }
+
+        a {
+            text-decoration: none;
+            color: black;
+            padding: 10px;
+            transition: background-color 0.3s;
+        }
+
+        a:hover {
+            background-color: #555;
+        }
+
+        /* Dropdown styles */
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #444;
+            min-width: 160px;
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            padding: 20px;
+        }
+         footer {
+            background-color: #333;
+            color: #fff;
+            padding: 20px 0;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-left {
+            flex: 1;
+        }
+
+        .footer-left h3 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .footer-left p {
+            font-size: 16px;
+        }
+
+        .footer-right {
+            flex: 1;
+            text-align: right;
+        }
+
+        .footer-right h3 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .footer-right a {
+            text-decoration: none;
+            color: #fff;
+            margin-right: 10px;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            background-color: #222;
+            padding: 10px 0;
+        }
+
+        .footer-bottom p {
+            font-size: 14px;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>My Website</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/about/">About</a></li>
+            <li class="dropdown">
+                <a href="javascript:void(0)">Contact</a>
+                <div class="dropdown-content">
+                    <a href="#">Email</a>
+                    <a href="#">Phone</a>
+                </div>
+            </li>
+        </ul>
+    </nav>
+    <div id="content">
+       
+        {% block content %}{% endblock %}
+    </div>
+    <footer>
+       <div class="footer-content">
+            <div class="footer-left">
+                <h3>Contact Us</h3>
+                <p>Email: kossy@example.com</p>
+                <p>Phone: +254 789898786</p>
+            </div>
+            <div class="footer-right">
+                <h3>Follow Us</h3>
+                <a href="https://twitter.com/">Twitter</a>
+                <a href="https://www.instagram.com/">Instagram</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; @2023 Django
+        </div>
+        <p>&copy; {{ year }} My Website</p>
+    </footer>
+</body>
+</html>
